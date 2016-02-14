@@ -1,5 +1,3 @@
 # Veebirakenduste loomine #
 
-###Nädal 1###
-###Nädal 2###
-###Nädal 3###
+[Nädal 1](https://bitbucket.org/Mpeedosk/veebirakendus/wiki/Week%201)
