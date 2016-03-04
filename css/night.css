@@ -1,0 +1,24 @@
+#header{
+/*	background: #398439;
+    background: #33495F;*/
+    background: #00468C;
+}
+body{
+ background: #001f3f;
+}
+h1,h2,h3 {
+    color:#FFF;
+}
+
+.content-overlay{
+ background: rgb(50, 108, 165);
+}
+.arrow{
+    color: #BAD3EC;
+}
+.rightarrow{
+    color: #BAD3EC;
+}
+.tooltip-inner {
+    background-color: #001f3f;
+}

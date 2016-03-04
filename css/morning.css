@@ -1,0 +1,12 @@
+#header{
+	background:#405162;
+}
+body{
+    background: linear-gradient(rgba(187,200,229, 0.9), rgba(187,200,229, 0.9)), url(../img/feathers.png);
+}
+.content-overlay{
+	background: url(../img/notebook4.png);
+}
+.tooltip-inner {
+	 background-color: #405162;
+ }
