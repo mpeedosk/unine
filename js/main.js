@@ -29,13 +29,15 @@ $(document).ready(function () {
     $('#calc-sleep-now').click(function () {
         var text = document.getElementById('btn-label-left').innerText;
         $("#btn-label-left").text(text == "aeg" ? "uuesti" : "aeg");
-
         var ix = $(this).index();
         $('#calc-left-a').slideToggle(750, "linear", ix === 0);
         $('#calc-left-b').slideToggle(750, "linear", ix === 1);
     });
 
     $('#calc-sleep-later').click(function () {
+        var text = document.getElementById('btn-label-right').innerText;
+        $("#btn-label-right").text(text == "aeg" ? "uuesti" : "aeg");
+        var ix = $(this).index();
         var ix = $(this).index();
         $('#calc-right-a').slideToggle(750, "linear", ix === 0);
         $('#calc-right-b').slideToggle(750, "linear", ix === 1);
@@ -115,18 +117,24 @@ $('#calc-sleep-later').click(function () {
     timeHour += 21; // liidame 24 et saaks paremini lahutdada, ning lahutame 3, mis on hilisem uneaeg
     $("#time-text-right").text("");
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 1; i < 8 ; i++) {
+        var datetime = pad(timeHour % 24) + ":" + pad(timeMinute);
+
+        switch(i){
+            case 1: $("#time-text-right-6").text(datetime); break
+            case 2: $("#time-text-right-5").text(datetime); break
+            case 3: $("#time-text-right-4").text(datetime); break
+            case 4: $("#time-text-right-3").text(datetime); break
+            case 5: $("#time-text-right-2").text(datetime); break
+            case 6: $("#time-text-right-1").text(datetime); break
+        }
         timeHour--;
         timeMinute -= 30;
         if (timeMinute < 0) {
             timeHour--;
             timeMinute += 60;
         }
-        var datetime = pad(timeHour % 24) + ":" + pad(timeMinute);
-
-        $('#time-text-right').append(datetime + "  ");
     }
-
 });
 // teeme kõik arvud vähemalt 2 kohaliseks ehk 1 oleks 01 jne
 function pad(d) {
