@@ -73,7 +73,7 @@ a:hover, a:active, a:focus {
     position: fixed;
     right: 0;
     width: 100px;
-    margin-right: -260px;
+    margin-right: 125px;
     border-radius: 5px 5px 0 0;
     z-index: 1000;
     -webkit-transition: all 0.4s ease 0s;
@@ -230,7 +230,7 @@ a:hover, a:active, a:focus {
 /* --------- content ------------ */
 
 #calc-left-b, #calc-right-b {
-    display: none;
+    display: inline-block;
 }
 
 #content {
@@ -429,7 +429,7 @@ a:hover, a:active, a:focus {
 .button-bot-left {
     position: absolute;
     right: 15%;
-    bottom: 11%;
+    bottom: 45%;
 }
 
 @media (max-width: 540px) {
@@ -440,7 +440,7 @@ a:hover, a:active, a:focus {
 
 .button-bot-right {
     position: absolute;
-    bottom: 11%;
+    bottom: 45%;
     left: 15%;
 }
 

@@ -2,8 +2,8 @@
 <html lang="et">
 
 <head>
-    <title>Unenäo püüdja</title>
-    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <title>Sleepify</title>
+    <link rel="shortcut icon" href="img/pillow.ico"/>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +11,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- sujuv lehekülgedevaheline navigeerimine -->
-    <link rel="stylesheet" href="css/animsition.min.css">
 
     <!-- Datepicker -->
     <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
@@ -24,21 +22,29 @@
     <link href="css/main.css" rel="stylesheet">
 
 
-    <!-- valime värviteema vahel -->
-    <!--<script>-->
-    <!--function getStylesheet() {-->
-    <!--var currentTime = new Date().getHours();-->
-    <!--if (currentTime > 17 || currentTime < 6) {-->
-    <!--document.write("<link rel='stylesheet' href='css/night.css' type='text/css'>");-->
-    <!--}-->
-    <!--else {-->
-    <!--document.write("<link rel='stylesheet' href='css/morning.css' type='text/css'>");-->
-    <!--}-->
-    <!--}-->
-    <!--getStylesheet();-->
-    <!--</script>-->
 
-    <link href="css/night.css" rel="stylesheet">
+	<!-- teine kujundus, kui javascript ei tööta -->
+	<noscript>
+	    <link href="css/main-noscript.css" rel="stylesheet">
+	</noscript>
+
+
+    <!--valime värviteema vahel-->
+	
+    <script>
+        function getStylesheet() {
+            var currentTime = new Date().getHours();
+            if (currentTime > 17 || currentTime < 6) {
+                document.write("<link rel='stylesheet' href='css/night.css' type='text/css'>");
+            }
+            else {
+                document.write("<link rel='stylesheet' href='css/morning.css' type='text/css'>");
+            }
+			    <!-- sujuv lehekülgedevaheline navigeerimine -->
+			document.write("<link rel='stylesheet' href='css/animsition.min.css'>");
+        }
+        getStylesheet();
+    </script>
 
 
     <!-- Custom Fonts -->
@@ -70,8 +76,8 @@
         <div class="container-fluid noselect">
             <div class="row">
                 <div class="col-xs-6 col-sm-3 pull-left">
-                    <a class="logo" href=""> <img class="logo-img" src="img/logo2-c.png" alt="logo">UNI</a></div>
-                <div class="col-sm-6"><h2 class="title">UNELEHT</h2></div>
+                    <a class="logo" href=""> <img class="logo-img" src="img/pillow.svg" alt="logo"></a></div>
+                <div class="col-sm-6"><h2 class="title">Sleepify</h2></div>
                 <!--<div class="col-xs-2"><a id="login-toggle" href="#" class="toggle" title="Login" data-toggle="tooltip" data-placement="left"></a>Login</div>
                 -->
                 <div class="col-xs-6 col-sm-3 pull-right">
@@ -108,19 +114,19 @@
                         <h2> Ärkamiseks sobivad ajad:</h2>
                         <h1 id="time-text-left-1" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Kaks unetsüklit, 3 tundi und">3</h1>
-                        <i class="col-sm-1">või</i>
+                        <em class="col-sm-1">või</em>
                         <h1 id="time-text-left-2" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Kolm unetsüklit, 4.5 tundi und">4.30</h1>
-                        <i class="col-sm-1">või</i>
+                        <em class="col-sm-1">või</em>
                         <h1 id="time-text-left-3" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Neli unetsüklit, 6 tundi und">6</h1>
 
                         <h1 id="time-text-left-4" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Viis unetsüklit, 7.5 tundi und">7.30</h1>
-                        <i class="col-sm-1">või</i>
+                        <em class="col-sm-1">või</em>
                         <h1 id="time-text-left-5" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Kuus unetsüklit, 9 tundi und"><strong>9</strong></h1>
-                        <i class="col-sm-1">või</i>
+                        <em class="col-sm-1">või</em>
                         <h1 id="time-text-left-6" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Seitse unetsüklit, 10.5 tundi und">10.30</h1>
                     </div>
@@ -171,18 +177,18 @@
                         <h2> Uinumiseks sobivad ajad: </h2>
                         <h1 id="time-text-right-1" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Seitse unetsüklit, 10.5 tundi und">3</h1>
-                        <i class="col-sm-1">või</i>
+                        <em class="col-sm-1">või</em>
                         <h1 id="time-text-right-2" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Kuus unetsüklit, 9 tundi und">4.30</h1>
-                        <i class="col-sm-1">või</i>
+                        <em class="col-sm-1">või</em>
                         <h1 id="time-text-right-3" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Viis unetsüklit, 7.5 tundi und">6</h1>
                         <h1 id="time-text-right-4" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Neli unetsüklit, 6 tundi und">7.30</h1>
-                        <i class="col-sm-1">või</i>
+                        <em class="col-sm-1">või</em>
                         <h1 id="time-text-right-5" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Kolm unetsüklit, 4.5 tundi und"><strong>9</strong></h1>
-                        <i class="col-sm-1">või</i>
+                        <em class="col-sm-1">või</em>
                         <h1 id="time-text-right-6" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                             title="Kaks unetsüklit, 3 tundi und">10.30</h1>
                     </div>
@@ -279,7 +285,6 @@
 <!-- Kella valik -->
 <script src="js/datepicker.min.js"></script>
 <script src="js/bootstrap-clockpicker.min.js"></script>
-
 
 <script type="text/javascript">
     $('.clockpicker').clockpicker({

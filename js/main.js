@@ -30,8 +30,8 @@ $(document).ready(function () {
         var text = document.getElementById('btn-label-left').innerText;
         $("#btn-label-left").text(text == "aeg" ? "uuesti" : "aeg");
         var ix = $(this).index();
-        $('#calc-left-a').slideToggle(750, "linear", ix === 0);
-        $('#calc-left-b').slideToggle(750, "linear", ix === 1);
+        $('#calc-left-a').stop(true).slideToggle(750, "linear", ix === 0);
+        $('#calc-left-b').stop(true).slideToggle(750, "linear", ix === 1);
     });
 
     $('#calc-sleep-later').click(function () {
@@ -39,8 +39,8 @@ $(document).ready(function () {
         $("#btn-label-right").text(text == "aeg" ? "uuesti" : "aeg");
         var ix = $(this).index();
         var ix = $(this).index();
-        $('#calc-right-a').slideToggle(750, "linear", ix === 0);
-        $('#calc-right-b').slideToggle(750, "linear", ix === 1);
+        $('#calc-right-a').stop(true).slideToggle(750, "linear", ix === 0);
+        $('#calc-right-b').stop(true).slideToggle(750, "linear", ix === 1);
     });
 
 

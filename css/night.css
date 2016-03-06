@@ -28,6 +28,6 @@ h1,h2,h3 {
 .span-or {
     background-color: rgb(36, 74, 116);
 }
-.time-wrapper i{
+.time-wrapper em{
     color: #BAD3EC;
 }
