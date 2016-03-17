@@ -203,14 +203,14 @@ td, th {
     a, a:visited {
         text-decoration: underline
     }
-
-    a[href]:after {
+/* validator
+    a [href]:after {
         content: " (" attr(href) ")"
     }
 
-    abbr[title]:after {
+    abbr [title]:after {
         content: " (" attr(title) ")"
-    }
+    }*/
 
     a[href^="javascript:"]:after, a[href^="#"]:after {
         content: ""
@@ -2898,7 +2898,8 @@ input[type=search] {
 
 input[type=checkbox], input[type=radio] {
     margin: 4px 0 0;
-    margin-top: 1px \9;
+    /*margin-top: 1px \9;*/
+    margin-top: 1px;
     line-height: normal
 }
 
@@ -2989,7 +2990,7 @@ textarea.form-control {
 input[type=search] {
     -webkit-appearance: none
 }
-
+/* validator
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     input[type=date].form-control, input[type=time].form-control, input[type=datetime-local].form-control, input[type=month].form-control {
         line-height: 34px
@@ -3002,7 +3003,7 @@ input[type=search] {
     .input-group-lg input[type=date], .input-group-lg input[type=time], .input-group-lg input[type=datetime-local], .input-group-lg input[type=month], input[type=date].input-lg, input[type=time].input-lg, input[type=datetime-local].input-lg, input[type=month].input-lg {
         line-height: 46px
     }
-}
+}*/
 
 .form-group {
     margin-bottom: 15px
@@ -3025,7 +3026,8 @@ input[type=search] {
 
 .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
     position: absolute;
-    margin-top: 4px \9;
+    /*margin-top: 4px \9;*/
+    margin-top: 4px;
     margin-left: -20px
 }
 
@@ -3174,7 +3176,8 @@ select[multiple].input-lg, textarea.input-lg {
     height: 34px;
     line-height: 34px;
     text-align: center;
-    pointer-events: none
+    /* validator
+    pointer-events: none*/
 }
 
 .form-group-lg .form-control + .form-control-feedback, .input-group-lg + .form-control-feedback, .input-lg + .form-control-feedback {
@@ -3389,13 +3392,14 @@ select[multiple].input-lg, textarea.input-lg {
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
+    /*validator*/
+    /*-ms-touch-action: manipulation;*/
+    /*touch-action: manipulation;*/
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    /*-webkit-user-select: none;*/
+    /*-moz-user-select: none;*/
+    /*-ms-user-select: none;*/
+    /*user-select: none;*/
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px
@@ -3426,10 +3430,10 @@ select[multiple].input-lg, textarea.input-lg {
     box-shadow: none;
     opacity: .65
 }
-
-a.btn.disabled, fieldset[disabled] a.btn {
+/* validator */
+/*a.btn.disabled, fieldset[disabled] a.btn {
     pointer-events: none
-}
+}*/
 
 .btn-default {
     color: #333;
@@ -3805,7 +3809,9 @@ tbody.collapse.in {
     margin-left: 2px;
     vertical-align: middle;
     border-top: 4px dashed;
-    border-top: 4px solid \9;
+    border-top: 4px solid;
+    /*validator */
+    /*border-top: 4px solid \9;*/
     border-right: 4px solid transparent;
     border-left: 4px solid transparent
 }
@@ -3879,14 +3885,14 @@ tbody.collapse.in {
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:hover {
     color: #777
 }
-
-.dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:hover {
-    text-decoration: none;
-    cursor: not-allowed;
-    background-color: transparent;
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
-}
+/* validator*/
+/*.dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:hover {*/
+    /*text-decoration: none;*/
+    /*cursor: not-allowed;*/
+    /*background-color: transparent;*/
+    /*background-image: none;*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)*/
+/*}*/
 
 .open > .dropdown-menu {
     display: block
@@ -3933,7 +3939,9 @@ tbody.collapse.in {
     content: "";
     border-top: 0;
     border-bottom: 4px dashed;
-    border-bottom: 4px solid \9
+    /*validator*/
+    /*border-bottom: 4px solid \9*/
+    border-bottom: 4px solid
 }
 
 .dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
@@ -4130,7 +4138,8 @@ tbody.collapse.in {
 [data-toggle=buttons] > .btn input[type=checkbox], [data-toggle=buttons] > .btn input[type=radio], [data-toggle=buttons] > .btn-group > .btn input[type=checkbox], [data-toggle=buttons] > .btn-group > .btn input[type=radio] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
-    pointer-events: none
+    /* validator */
+    /*pointer-events: none*/
 }
 
 .input-group {
@@ -5515,7 +5524,7 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 .alert-danger .alert-link {
     color: #843534
 }
-
+/* validator
 @-webkit-keyframes progress-bar-stripes {
     from {
         background-position: 40px 0
@@ -5523,8 +5532,8 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
     to {
         background-position: 0 0
     }
-}
-
+}*/
+/* validator
 @-o-keyframes progress-bar-stripes {
     from {
         background-position: 40px 0
@@ -5533,6 +5542,7 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
         background-position: 0 0
     }
 }
+*/
 
 @keyframes progress-bar-stripes {
     from {
@@ -5633,7 +5643,8 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 
 .media, .media-body {
     overflow: hidden;
-    zoom: 1
+    /* validator */
+    /*zoom: 1*/
 }
 
 .media-body {
@@ -6705,7 +6716,7 @@ button.close {
 .carousel-inner > .item > a > img, .carousel-inner > .item > img {
     line-height: 1
 }
-
+/*validator
 @media all and (transform-3d),(-webkit-transform-3d) {
     .carousel-inner > .item {
         -webkit-transition: -webkit-transform .6s ease-in-out;
@@ -6717,24 +6728,24 @@ button.close {
         perspective: 1000px
     }
 
-    .carousel-inner > .item.active.right, .carousel-inner > .item.next {
-        left: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0)
-    }
+        .carousel-inner > .item.active.right, .carousel-inner > .item.next {
+            left: 0;
+            -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0)
+        }
 
-    .carousel-inner > .item.active.left, .carousel-inner > .item.prev {
-        left: 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0)
-    }
+        .carousel-inner > .item.active.left, .carousel-inner > .item.prev {
+            left: 0;
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0)
+        }
 
-    .carousel-inner > .item.active, .carousel-inner > .item.next.left, .carousel-inner > .item.prev.right {
-        left: 0;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0)
-    }
-}
+        .carousel-inner > .item.active, .carousel-inner > .item.next.left, .carousel-inner > .item.prev.right {
+            left: 0;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0)
+        }
+}*/
 
 .carousel-inner > .active, .carousel-inner > .next, .carousel-inner > .prev {
     display: block
@@ -6784,7 +6795,7 @@ button.close {
     filter: alpha(opacity=50);
     opacity: .5
 }
-
+/* validator
 .carousel-control.left {
     background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .0001) 100%);
     background-image: -o-linear-gradient(left, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .0001) 100%);
@@ -6803,7 +6814,7 @@ button.close {
     background-image: linear-gradient(to right, rgba(0, 0, 0, .0001) 0, rgba(0, 0, 0, .5) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
     background-repeat: repeat-x
-}
+}*/
 
 .carousel-control:focus, .carousel-control:hover {
     color: #fff;
@@ -6865,7 +6876,9 @@ button.close {
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #000 \9;
+    /*validator*/
+    /*background-color: #000 \9;*/
+    background-color: #000;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
     border-radius: 10px
@@ -6958,7 +6971,7 @@ button.close {
 }
 
 .text-hide {
-    font: 0/0 a;
+    font:0px/0 a;
     color: transparent;
     text-shadow: none;
     background-color: transparent;
@@ -6972,10 +6985,10 @@ button.close {
 .affix {
     position: fixed
 }
-
+/*validator
 @-ms-viewport {
     width: device-width
-}
+}*/
 
 .visible-lg, .visible-md, .visible-sm, .visible-xs {
     display: none !important

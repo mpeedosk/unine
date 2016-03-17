@@ -44,11 +44,12 @@
     overflow: visible;
     position: relative;
     -webkit-touch-callout: none;
+/*  validator
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none
+    user-select: none*/
 }
 
 .clockpicker-canvas, .clockpicker-dial {
@@ -138,25 +139,25 @@
     opacity: .25
 }
 
-.clockpicker-canvas-bearing, .clockpicker-canvas-fg {
+ /*validator*/
+/*.clockpicker-canvas-bearing, .clockpicker-canvas-fg {
     stroke: none;
     fill: #0095dd
 }
-
 .clockpicker-canvas-bg {
     stroke: none;
-    fill: #c0e5f7
+    fill: #c0e5f7;
 }
-
 .clockpicker-canvas-bg-trans {
     fill: rgba(0, 149, 221, .25)
-}
 
+}*/
+/*
 .clockpicker-canvas line {
     stroke: #0095dd;
     stroke-width: 1;
     stroke-linecap: round
-}
+}*/
 
 .clockpicker-button.am-button {
     margin: 1px;

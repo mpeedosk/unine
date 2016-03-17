@@ -55,7 +55,7 @@
   -webkit-animation-name: animsition-loading;
           animation-name: animsition-loading;
 }
-
+ /*validator*/
 @-webkit-keyframes animsition-loading {
   0% {
     -webkit-transform: rotate(0deg);
@@ -77,7 +77,7 @@
             transform: rotate(360deg);
   }
 }
-
+ /*validator*/
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -102,7 +102,7 @@
           animation-name: fade-in;
 }
 
-
+ /*validator*/
 @-webkit-keyframes fade-out {
   0% {
     opacity: 1;
@@ -127,6 +127,7 @@
   -webkit-animation-name: fade-out;
           animation-name: fade-out;
 }
+/*validator*/
 @-webkit-keyframes fade-in-up {
   0% {
     -webkit-transform: translateY(500px);

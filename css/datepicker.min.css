@@ -355,10 +355,11 @@
 .datepicker--nav-action {
     width: 32px;
     border-radius: 4px;
-    -webkit-user-select: none;
+    /* validator*/
+    /*    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none
+    user-select: none*/
 }
 
 .datepicker--nav-action.-disabled- {
@@ -370,11 +371,13 @@
     height: 32px
 }
 
+/* validator
 .datepicker--nav-action path {
     fill: none;
     stroke: #9c9c9c;
     stroke-width: 2px
 }
+*/
 
 .datepicker--nav-title {
     border-radius: 4px;

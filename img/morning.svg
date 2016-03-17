@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="19mm"
+   height="40mm"
+   viewBox="0 0 184.1066 414.3941"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="morning.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient4140"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4142" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="-53.59198"
+     inkscape:cy="175.92582"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-261.40568,-278.74887)">
+    <g
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#bad3ec;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text4136">
+      <path
+         d="m 419.3775,663.61316 -3.05176,28.9917 -141.90673,-11.59668 -12.51221,-17.08985 0.91553,-133.36181 27.77099,-1.52588 15.25879,93.38379 q 23.80371,-13.42774 41.50391,-31.12793 18.00537,-18.00537 29.90722,-39.0625 11.90186,-21.36231 17.7002,-45.16602 6.10352,-24.10888 6.10352,-50.04882 0,-21.36231 -4.88282,-42.11426 -4.57763,-20.75196 -13.42773,-39.67285 -8.8501,-18.9209 -21.66748,-35.40039 -12.51221,-16.78467 -28.38135,-30.21241 l 35.70557,-30.2124 q 18.61572,14.95361 32.95898,34.17969 14.34326,19.22607 23.80371,41.5039 9.76563,21.97266 14.64844,46.08155 5.18799,24.10888 5.18799,48.82812 0,31.73828 -7.32422,61.34033 -7.01904,29.29688 -21.36231,54.93164 -14.34326,25.63477 -35.70556,46.38672 -21.36231,20.75196 -50.04883,34.48487 l 88.80615,16.47949 z"
+         style="font-size:625px;fill:#bad3ec;fill-opacity:1;stroke:none;stroke-opacity:1"
+         id="path4199"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>
