@@ -29,30 +29,8 @@ $(document).ready(function () {
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
-<<<<<<< HEAD
         $("#menu-toggle").toggleClass('rotated');
         //document.getElementById('div').classList.toggle('rotated')
-=======
-    });
-
-
-    // kui vajutada arvuta aeg nupule, siis vahetab div'id ära
-    $('#calc-sleep-now').click(function () {
-        var text = document.getElementById('btn-label-left').innerText;
-        $("#btn-label-left").text(text == "aeg" ? "uuesti" : "aeg");
-        var ix = $(this).index();
-        $('#calc-left-a').stop(true).slideToggle(750, "linear", ix === 0);
-        $('#calc-left-b').stop(true).slideToggle(750, "linear", ix === 1);
-    });
-
-    $('#calc-sleep-later').click(function () {
-        var text = document.getElementById('btn-label-right').innerText;
-        $("#btn-label-right").text(text == "aeg" ? "uuesti" : "aeg");
-        var ix = $(this).index();
-        var ix = $(this).index();
-        $('#calc-right-a').stop(true).slideToggle(750, "linear", ix === 0);
-        $('#calc-right-b').stop(true).slideToggle(750, "linear", ix === 1);
->>>>>>> 2f21ff3c5f2a14e6691dba1d11c9a443d8f8609d
     });
 
 
