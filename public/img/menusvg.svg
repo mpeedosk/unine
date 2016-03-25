@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="10px"
+   y="20px"
+   width="29"
+   height="29"
+   xml:space="preserve"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="menusvg.svg"><metadata
+     id="metadata11"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs9" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     id="namedview7"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="4"
+     inkscape:cx="-54.459433"
+     inkscape:cy="40.575073"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Icons" /><g
+     id="Icons"
+     style="opacity:0.75"
+     transform="matrix(2.5,0,0,2.6923077,-12.5,-19.461539)"><path
+       id="menu"
+       d="m 5.8285712,15.514284 9.9428578,0 c 0.4582,0 0.828571,0.370373 0.828571,0.828573 l 0,0.828571 C 16.6,17.629628 16.229629,18 15.771429,18 L 5.8285712,18 C 5.3703712,18 5,17.629628 5,17.171428 l 0,-0.828571 c 0,-0.4582 0.3703712,-0.828573 0.8285712,-0.828573 z M 5,12.2 5,13.028572 c 0,0.4582 0.3703712,0.828571 0.8285712,0.828571 l 9.9428578,0 c 0.4582,0 0.828571,-0.370371 0.828571,-0.828571 L 16.6,12.2 c 0,-0.4582 -0.370371,-0.828572 -0.828571,-0.828572 l -9.9428578,0 C 5.3703712,11.371428 5,11.7418 5,12.2 Z M 5,8.0571428 5,8.8857141 c 0,0.4582 0.3703712,0.8285718 0.8285712,0.8285718 l 9.9428578,0 c 0.4582,0 0.828571,-0.3703718 0.828571,-0.8285718 l 0,-0.8285713 c 0,-0.4581999 -0.370371,-0.8285713 -0.828571,-0.8285713 l -9.9428578,0 C 5.3703712,7.2285715 5,7.5989429 5,8.0571428 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:1" /></g><g
+     id="Guides"
+     style="display:none"
+     transform="translate(1e-6,-21)" /></svg>

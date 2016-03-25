@@ -1,0 +1,123 @@
+#header{
+/*	background: #398439;
+    background: #33495F;*/
+    background: #00468C;
+}
+body{
+ background: #001f3f;
+    color: #FFF;
+}
+h1,h2,h3 {
+    color:#FFF;
+}
+
+.headings h2 {
+    color: #FFF;
+}
+.content-overlay{
+ background: rgb(50, 108, 165);
+}
+.arrow,.rightarrow,.arrow-low{
+    color: #BAD3EC;
+}
+.tooltip-inner {
+    background-color: #001f3f;
+}
+.sidebar-nav {
+    background: rgb(36, 74, 116);
+}
+#login-modal{
+    background: rgb(36, 74, 116);
+}
+.span-or {
+    background-color: rgb(36, 74, 116);
+}
+.time-wrapper em{
+    color: #BAD3EC;
+}
+
+/* --------- login modal --------- */
+input[type="email"],
+input[type="text"],
+input[type="password"],
+textarea,
+textarea.form-control {
+    background: #FFF;
+    color: #444;
+}
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+textarea.form-control:focus {
+    background: #989cb2;
+}
+
+input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder,
+textarea:-moz-placeholder, textarea.form-control:-moz-placeholder {
+    color: #888;
+}
+
+input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder,
+textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder {
+    color: #888;
+}
+
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder {
+    color: #888;
+}
+
+button.btn, a.btn-l {
+    background: #399599;
+    color: #fff;
+}
+
+
+button.btn:hover, a.btn-l:hover {
+    color: #fff;
+}
+
+button.btn:active, a.btn-l:hover {
+    color: #fff;
+}
+
+button.btn:focus, a.btn-l:hover {
+    background: #399599;
+    color: #fff;
+}
+
+button.btn:active:focus, button.btn.active:focus,
+a.btn-l:active:focus, a.btn-l.active:focus {
+    background: #399599;
+    color: #fff;
+}
+
+
+.panel-header {
+    background: rgb(22, 58, 96);
+    color: #FFF;
+}
+
+.panel-header .close {
+    color: #FFF;
+}
+
+.panel-title {
+    color: #FFF;
+}
+.panel-body {
+    background: rgb(36, 74, 116);
+    color: #FFF;
+}
+.panel-body form .input-error {
+    border-color: #399599;
+}
+
+.register {
+    color: #FFF;
+}
+
+.register:hover {
+    color: #399599;
+}

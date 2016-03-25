@@ -1,0 +1,30 @@
+
+#sidebar-wrapper {
+
+    margin-right: 125px;
+
+}
+
+
+#calc-left-a, #calc-right-a {
+    display: none;
+}
+
+#calc-left-b, #calc-right-b {
+    display: inline-block;
+}
+
+
+.button-bot-left {
+    position: absolute;
+    right: 15%;
+}
+
+.button-bot-right {
+    position: absolute;
+    left: 15%;
+}
+
+#menu-close{
+    display:none;
+}
