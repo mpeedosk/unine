@@ -128,27 +128,26 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 	color: #888;
 }
 
-button.btn, a.btn-l {
+.button, a.btn-l {
 	background: #202931;
 	color: #fff;
 }
 
 
-button.btn:hover, a.btn-l:hover {
+.button:hover, a.btn-l:hover {
 	color: #fff;
 }
 
-button.btn:active, a.btn-l:active {
+.button:active, a.btn-l:active {
 	color: #fff;
 }
 
-button.btn:focus, a.btn-l:focus {
+.button:focus, a.btn-l:focus {
 	background: #399599;
 	color: #fff;
 }
 
-button.btn:active:focus, button.btn.active:focus,
-a.btn-l:active:focus, a.btn-l.active:focus {
+.button:active:focus, .button.active:focus {
 	background: #399599;
 	color: #fff;
 }

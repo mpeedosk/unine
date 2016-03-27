@@ -521,7 +521,7 @@ hr.medium {
     text-align: center;
 }
 
-/* --------- login modal --------- */
+/* form-controll täiustamine */
 
 input[type="text"],
 input[type="email"],
@@ -567,8 +567,8 @@ textarea.form-control:focus {
 }
 
 
-
-button.btn, a.btn-l {
+/* lehekülje stiiliga ühtiv nuppu klass*/
+.button {
     width: 60%;
     height: 50px;
     margin: 0 auto;
@@ -593,37 +593,26 @@ button.btn, a.btn-l {
     transition: all .3s;
 }
 
-button.btn:hover, a.btn-l:hover {
+.button:hover {
     opacity: 0.6;
 }
 
-button.btn:active, a.btn-l:active {
+.button:active {
     opacity: 0.6;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
-button.btn:focus, a.btn-l:active {
+.button:focus{
     opacity: 0.6;
 }
 
-button.btn:active:focus, button.btn.active:focus,
-a.btn-l:active:focus, a.btn-l.active:focus {
+.button:active:focus, .button.active:focus{
     opacity: 0.6;
 }
 
-.panel{
-	border-color: #000;
-}
-.login-panel {
-    margin-top: 25%;
-    background: #3a3a3a;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    border-radius: 25px;
-    text-align: left;
-}
+/* Registreerimislehe paigutus*/
 .reg-panel {
     margin-top: 15%;
     background: #3a3a3a;
@@ -633,6 +622,10 @@ a.btn-l:active:focus, a.btn-l.active:focus {
     text-align: left;
 }
 
+/*---------- Sisselogimise modal ----------*/
+.login-panel {
+    margin-top: 25%;
+}
 
 .panel-header {
     padding: 25px 25px 15px 25px;
@@ -750,8 +743,13 @@ a.btn-l:active:focus, a.btn-l.active:focus {
     font-size: 0.8em;
 }
 
+/* rakenduse abiinfo modali paigutused*/
+
+
+
+/*---------- Unelogi ----------*/
 .log-text-area{
-    margin: 23px 0 25px 0;
+    margin: 23px 0 20px 0;
     display: block;
     width: 100%;
     height: auto;
@@ -773,29 +771,44 @@ a.btn-l:active:focus, a.btn-l.active:focus {
 .log-text-area:focus{
     background-color: #C9CCDE;
 }
+/*unelogi nupud*/
 #log-save, #log-new{
     width: 100%;
     margin-top: -5px;
     margin-bottom: 5px;
 }
+
 .log-panel{
     margin-top: 23px;
 }
 .log-panel-body{
-    height: 367px;
+    height: 377px;
     overflow-y: auto;
-    padding: 25px 25px 30px 25px;
+    padding: 25px 25px 0 25px;
     text-align: left;
     -moz-border-radius: 0 0 25px 25px;
     -webkit-border-radius: 0 0 25px 25px;
     border-radius: 0 0 25px 25px;
 }
-
+/* tekst jamas sellel laiusel*/
 @media (max-width: 1080px) and (min-width: 991px){
     .log-list {
         display:none;
     }
 }
+/* tooltip kipub veits liiga väikeseks jääma */
+.tooltip-inner {
+    max-width: 350px;
+}
 
-
-
+@media (min-width: 993px){
+    #left-modal .modal-dialog, #right-modal .modal-dialog{
+        max-width: 500px;
+    }
+    #left-modal-inner{
+        right: 20%;
+    }
+    #right-modal-inner{
+        left: 20%;
+    }
+}

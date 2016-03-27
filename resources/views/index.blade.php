@@ -10,6 +10,15 @@
 
     <!-- Kella valik -->
     <script src="js/bootstrap-clockpicker.js"></script>
+
+    @if (count($errors) > 0)
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#modal-login").modal('show');
+            });
+        </script>
+    @endif
+
 @stop
 @section('content')
     <section id="content">
@@ -48,11 +57,13 @@
                                 title="Seitse unetsüklit, 10.5 tundi und">10.30</h1>
                         </div>
 
-                        <span class="glyphicon glyphicon glyphicon-question-sign"></span>
+                        <span class="glyphicon glyphicon glyphicon-question-sign" data-toggle="modal"
+                              data-target="#left-modal"></span>
                         <!--                    <a class="btn btn-calc" id="calc-sleep-now-again">
                                                 <em class="ispan glyphicon glyphicon-time"></em>
                                                 <span>Arvuta</span><br/>uuesti
                                             </a>-->
+
                     </div> <!-- peidetud osa -->
                 </div>
 
@@ -107,7 +118,8 @@
                             <h1 id="time-text-right-6" class="col-sm-3 col-xs-6" data-toggle="tooltip"
                                 title="Kaks unetsüklit, 3 tundi und">10.30</h1>
                         </div>
-                        <span class="glyphicon glyphicon glyphicon-question-sign"></span>
+                        <span class="glyphicon glyphicon glyphicon-question-sign" data-toggle="modal"
+                              data-target="#right-modal"></span>
                     </div>
                 </div>
                 <button class="btn-calc button-bot-right" id="calc-sleep-later">
@@ -168,15 +180,15 @@
                             @endif
                         </div>
                         <br>
-                        <button type="submit" class="btn center-block ">Logi sisse</button>
+                        <button type="submit" class="btn button center-block ">Logi sisse</button>
                         <hr class="medium">
                         <div class="social-wrapper">
                             <a href="/register" class="register pull-left"> Loo konto</a>
                             <em class="social-label"> või kasuta </em>
                             <div class="social-icons">
-                                <a href=""> <img class="social-img" src="img/Fb.svg" alt="Facebook"></a>
+                                <a href="auth/facebook"> <img class="social-img" src="img/Fb.svg" alt="Facebook"></a>
                                 <a href="/login" class="animsition-link"> <img class="social-img" src="img/gp.svg"
-                                                                              alt="Google Plus"></a>
+                                                                               alt="Google Plus"></a>
                             </div>
                         </div>
                     </form>
@@ -186,4 +198,38 @@
             </div>
         </div>
     </div>
+
+    <!-- Parempoolne abi -->
+    <div class="modal fade" id="right-modal" role="dialog">
+        <div class="modal-dialog" id="right-modal-inner">
+            <div class="login-panel">
+                <div class="panel-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Abiinfo</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Uinumisajad on arvutatud unetsüklite põhjal. Roheliselt märgitud on vastavalt 5 ja 6 unetsüklit,
+                        mis on soovituslikud öiseks uneks, et inimene puhkaks korralikult</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vasakpoolne abi -->
+    <div class="modal fade" id="left-modal" role="dialog">
+        <div class="modal-dialog" id="left-modal-inner">
+            <div class="login-panel">
+                <div class="panel-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Abiinfo</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Ärkamisajad on arvutatud unetsüklite põhjal. Roheliselt märgitud on vastavalt 5 ja 6 unetsüklit,
+                        mis on soovituslikud öiseks uneks, et inimene puhkaks korralikult. Arvutamisel on kasutatud eeldust,
+                        et keskmine inimene jääb 14 minutiga magama.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @stop

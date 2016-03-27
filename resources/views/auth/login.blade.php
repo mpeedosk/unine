@@ -15,7 +15,14 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/jquery.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+        if (typeof jQuery == 'undefined') {
+            document.write(decodeURI("%3Cscript src='/js/jquery-2.2.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/animsition.min.js"></script>
     <script src="js/main.js"></script>
@@ -23,9 +30,6 @@
     <!-- Social Buttons CSS -->
     <link href="css/main.css" rel="stylesheet">
     <link href="css/morning.css" rel="stylesheet">
-
-    <link rel='stylesheet' href='css/animsition.min.css'>
-
 
     <script>
         getStylesheet();
@@ -86,7 +90,7 @@
                         </div>
                     </div>
                     <br>
-                    <button type="submit" class="btn center-block ">Logi sisse</button>
+                    <button type="submit" class="btn button center-block ">Logi sisse</button>
                     <hr class="medium">
                     <div class="social-wrapper">
                         <a class="register pull-left"> Loo konto</a>

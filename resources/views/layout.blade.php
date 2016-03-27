@@ -28,10 +28,18 @@
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script>
+	if (typeof jQuery == 'undefined') {
+		document.write(decodeURI("%3Cscript src='/js/jquery-2.2.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+	}
+	</script>
     <!-- Sujuv lehekülgede vahetus -->
     <script src="/js/animsition.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script>
+		$.fn.modal || document.write(decodeURI("%3Cscript src='/js/bootstrap.min.js' type='text/javascript'%3E%3C/script%3E"))
+		</script>
     <!-- Main script -->
     <script src="/js/main.js"></script>
 
@@ -50,7 +58,7 @@
 
 <body>
 <!-- ****************************** Sidebar ************************** -->
-<div class="page">
+<div class="page animsition">
     <nav id="sidebar-wrapper">
 
         <a id="menu-close" href="#" class="close-btn toggle">SULGE <span
@@ -58,11 +66,11 @@
         <ul class="sidebar-nav">
 
             @if (Auth::guest())
-                <li><a href="/home" class="animsition-link">Pealeht</a></li>
+                <li><a href="/" class="animsition-link">Pealeht</a></li>
                 <li><a href="/loe_lisaks" class="animsition-link">Loe lisaks</a></li>
             @else
-                <li><a href="/home" class="animsition-link">Pealeht</a></li>
-                <li><a href="/" class="animsition-link">Unearvutaja</a></li>
+                <li><a href="/home" class="animsition-link">Kodu</a></li>
+                <li><a href="/" class="animsition-link">Pealeht</a></li>
                 <li><a href="/unelogi" class="animsition-link">Unelogi</a></li>
                 <li><a href="/statistika" class="animsition-link">Statistika</a></li>
                 <li><a href="/loe_lisaks" class="animsition-link">Loe lisaks</a></li>
@@ -112,7 +120,7 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <br>
-                    <p class="text-muted"> Meeskond Uni 2016&copy;</p>
+                    <p class="text-muted"></p>
                 </div>
             </div>
         </div>
