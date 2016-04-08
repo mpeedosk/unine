@@ -30,9 +30,12 @@ Route::group(['middleware' => 'web'], function () {
         return view('index');
     });
 
-    Route::get('home', 'PagesController@home');
     Route::get('statistika', 'PagesController@statistika');
 
+
+
+    Route::get('home', 'HomeController@index');
+    Route::post('home', 'HomeController@store');
 
 
     Route::get('unelogi', 'LogController@index');
@@ -49,6 +52,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/unearvutaja', function () {
         return view('index');
     });
+    Route::get('/kaart', function(){
+        return view('map');
+    });
+
     Route::get('/loe_lisaks', function () {
         return view('loelisaks');
     });

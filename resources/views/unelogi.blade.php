@@ -11,7 +11,7 @@
 
     <!-- Include English language -->
     <script src="/js/i18n/datepicker.et.js"></script>
-@stop
+    @stop
 
 @section('content')
     <div id="content">
@@ -22,7 +22,7 @@
                     {!! csrf_field() !!}
                     <div>
                         <div class="col-md-8">
-                            <label for="log-title" class=" visuallyhidden">Sisesta pealkiri</label>
+                            <label for="log-title " class=" visuallyhidden">Sisesta pealkiri</label>
                             <input id="log-title" class="log-text-area" placeholder="Lisa pealkiri" name="title" maxlength="15" required >
                         </div>
 
@@ -81,21 +81,30 @@
                                                        </a>--}}
                             @foreach($logs as $log)
                                 <a href="/unelogi/{{$log->id}}" class="list-group-item"> {{$log -> title}}
-
                                     <span class="log-list pull-right text-muted small"><em>{{date('d.m.Y', strtotime($log    -> date))}}</em>
                                     </span>
                                 </a>
                             @endforeach
                         </div>
-
+                        {{$logs->links()}}
+                        <script type="text/javascript">
+                            $(function() {
+                                $('.scroll').jscroll({
+                                    autoTrigger: true,
+                                    nextSelector: '.pagination li.active + li a',
+                                    contentSelector: 'div.scroll',
+                                    callback: function() {
+                                        $('ul.pagination:visible:first').hide();
+                                    }
+                                });
+                            });
+                        </script>
                         <button type="submit" class="btn btn-default btn-block">Vaata vanemaid</button>
                     </div>
                     <!-- /.panel-body -->
                 </div>
                 <a href="/unelogi" class="btn button" id="log-new">Uus sissekanne</a>
             </div>
-
-
         </div>
     </div>
 @stop

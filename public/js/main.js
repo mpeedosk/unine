@@ -188,3 +188,38 @@ function getStylesheet() {
     <!-- sujuv lehekülgedevaheline navigeerimine -->
     document.write("<link rel='stylesheet' href='/css/animsition.min.css' type='text/css'>");
 }
+
+function init_map() {
+    var school = new google.maps.LatLng(58.378254,  26.714684);
+
+    var options = {
+        center: school,
+        zoom: 17,
+        fullscreenControl: true,
+    };
+
+    var map = new google.maps.Map(document.getElementById("map-container"),
+        options);
+
+    var marker = new google.maps.Marker({
+        position: school,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title:"J. Liivi 2"
+    });
+
+    marker.addListener('click', toggleBounce);
+
+    function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+        } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+    }
+
+
+
+    marker.setMap(map);
+
+}

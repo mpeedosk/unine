@@ -2,7 +2,7 @@
 <html lang="et">
 
 <head>
-    @yield('page-title')
+        <title>Kodu</title>
     <link rel="shortcut icon" href="/img/pillow.ico"/>
 
     <meta charset="utf-8">
@@ -48,7 +48,23 @@
         getStylesheet();
     </script>
 
-    @yield('page-specific-stuff')
+        <!-- Diagram -->
+    <link href="libs/morris.js/morris.css" rel="stylesheet">
+    <!-- Datepicker -->
+    <link href="css/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Kella valik -->
+    <script src="js/bootstrap-clockpicker.js"></script>
+
+    <script src="libs/raphael/raphael-min.js"></script>
+    <script src="libs/morris.js/morris.min.js"></script>
+    <script src="js/currentWeek.js"></script>
+
+
+    <!-- Kella valik -->
+    <script src="js/bootstrap-clockpicker.js"></script>
+
+
 
             <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
@@ -65,21 +81,14 @@
                     class="glyphicon glyphicon-remove-circle"></span></a>
         <ul class="sidebar-nav">
 
-            @if (Auth::guest())
-                <li><a href="/" class="animsition-link">Pealeht</a></li>
-                <li><a href="/loe_lisaks" class="animsition-link">Loe lisaks</a></li>
-                <li><a href="/kaart" class="animsition-link"> Kaart </a></li>
-            @else
-                <li><a href="/home" class="animsition-link">Kodu</a></li>
+                            <li><a href="/home" class="animsition-link">Kodu</a></li>
                 <li><a href="/" class="animsition-link">Pealeht</a></li>
                 <li><a href="/unelogi" class="animsition-link">Unelogi</a></li>
                 <li><a href="/statistika" class="animsition-link">Statistika</a></li>
                 <li><a href="/loe_lisaks" class="animsition-link">Loe lisaks</a></li>
-                <li><a href="/kaart" class="animsition-link"> Kaart </a></li>
-                <li><a href="{{ url('/logout') }}">Logi välja</a></li>
+                <li><a href="http://unine.herokuapp.com/logout">Logi välja</a></li>
 
-            @endif
-        </ul>
+                    </ul>
     </nav>
     <!-- ****************************** Header ************************** -->
     <header id="header">
@@ -95,14 +104,8 @@
                     <div class="col-xs-6 col-sm-3 pull-right">
                         <a id="menu-toggle" href="#" class="toggle" role="button"><img src="/img/menusvg.svg" alt="menu"></a>
 
-                        @if (Auth::guest())
-                            <a id="login-toggle" href="login" data-remote="false" data-modal-id="modal-login"
-                               title="Login" data-toggle="tooltip"
-                               data-placement="left"><span class="glyphicon glyphicon-user"></span></a>
-                        @else
-                            <span id="user-toggle"> {{ substr(Auth::user()-> first_name,0,1) . "." . substr(Auth::user()-> last_name,0,1) . "."  }} </span>
-                        @endif
-
+                                                    <span id="user-toggle"> M.P. </span>
+                        
                     </div>
                 </div>
             </div>
@@ -114,7 +117,88 @@
 
     <!-- ****************************** Content ************************** -->
 
-    @yield('content')
+    <div class="row">
+
+    <div class="col-sm-3">
+
+    </div>
+
+    <!-- ****************************** Content ************************** -->
+    <div class="col-sm-6">
+        <div class="home-heading">
+            <div class="row vertical-align">
+                <h1 class="col-xs-8">
+                    Millal ma magama läksin:
+                </h1>
+                <div  class="col-xs-2 input-group clockpicker" >
+                    <label for="went-to-sleep" class="visuallyhidden">Went to sleep</label>
+                    <input id="went-to-sleep" type="text" class="form-control" value="22.45">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row vertical-align">
+                <h1 class="col-xs-8">
+                    Millal ma üles tõusin:
+                </h1>
+                <div class="col-xs-2 input-group clockpicker" >
+                    <label for="woke-up-at" class="visuallyhidden">Woke up at</label>
+                    <input id="woke-up-at" type="text" class="form-control" value="7.15">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="medium">
+
+        <section id="stat-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Jooksev nädal</h2>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="morris-bar-chart"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+            </div>
+            <!-- /.row -->
+            <!-- /#page-wrapper -->
+
+        </section>
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.clockpicker').clockpicker({
+        placement: 'bottom',
+        align: 'right',
+        autoclose: 'true',
+        donetext: 'Valmis'
+    });
+</script>
 
     <!-- Footer -->
     <footer>

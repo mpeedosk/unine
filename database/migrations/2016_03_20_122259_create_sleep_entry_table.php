@@ -14,9 +14,10 @@ class CreateSleepEntryTable extends Migration
     {
         Schema::create('sleep', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type')->default(0);
             $table->time('went_to_sleep');
             $table->time('woke_up');
+            $table->float('hours')->unsigned();
+            $table->float('extra')->unsigned()->default(0);
             $table->integer('user_id')->unsigned()->index();
             $table->integer('sleep_quality')->default(0);
             $table->timestamps();

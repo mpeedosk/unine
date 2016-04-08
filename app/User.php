@@ -27,4 +27,7 @@ class User extends Authenticatable
     public function logs(){
         return $this->hasMany(Log::class);
     }
+    public function sleep(){
+        return $this->hasMany(Sleep::class);
+    }
 }

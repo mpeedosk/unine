@@ -93,10 +93,10 @@
                     <button type="submit" class="btn button center-block ">Logi sisse</button>
                     <hr class="medium">
                     <div class="social-wrapper">
-                        <a class="register pull-left"> Loo konto</a>
+                        <a href="/register" class="register pull-left"> Loo konto</a>
                         <em class="social-label"> või kasuta </em>
                         <div class="social-icons">
-                            <a href=""> <img class="social-img" src="img/Fb.svg" alt="Facebook"></a>
+                            <a href="auth/facebook"> <img class="social-img" src="img/Fb.svg" alt="Facebook"></a>
                             <a href="login" class="animsition-link"> <img class="social-img" src="img/gp.svg"
                                                                           alt="Google Plus"></a>
                         </div>

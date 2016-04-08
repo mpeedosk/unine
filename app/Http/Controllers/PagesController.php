@@ -10,10 +10,6 @@ class PagesController extends Controller
         $this->middleware('auth');
     }
 
-    public function home(){
-
-        return view('home');
-    }
     public function statistika(){
 
         return view('statistika');

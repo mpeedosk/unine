@@ -521,6 +521,27 @@ hr.medium {
     text-align: center;
 }
 
+#home-submit{
+    margin-top: 40px;
+    width: 200px;
+}
+
+#home-dates{
+    background-color: #225486;
+    border-radius: 20px;
+    padding: 20px;
+}
+.bar-panel-body{
+    background-color: #15273A;
+    border-radius: 20px;
+}
+.bar-panel-header{
+    text-align: center;
+}
+
+
+
+
 /* form-controll täiustamine */
 
 input[type="text"],
