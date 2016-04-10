@@ -192,6 +192,10 @@ a {
     }
 }
 
+.language{
+    margin-top: -59px;
+    margin-right: 6px;
+}
 #login-toggle {
     z-index: 1;
     font-size: 35px;

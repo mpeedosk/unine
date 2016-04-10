@@ -65,14 +65,14 @@ $(document).ready(function () {
     $('#calc-sleep-now').click(function () {
 
         var text = $("#btn-label-left").text();
-        $("#btn-label-left").text(text == "aeg" ? "uuesti" : "aeg");
+        $("#btn-label-left").text(getText(text));
 
         var ix = $(this).index();
         $('#calc-left-a').stop(true).slideToggle(750, ix === 0);
         $('#calc-left-b').stop(true).slideToggle(750, ix === 1);
 
 
-        if(text == "aeg"){
+        if(text == "aeg" || text == "time"){
             var currentdate = new Date();
             var timeHour = currentdate.getHours();
             var timeMinute = currentdate.getMinutes() + 14;
@@ -106,12 +106,13 @@ $(document).ready(function () {
 // kellaaegade arvutamine kui vaja ärgata teatud kellaaeg
     $('#calc-sleep-later').click(function () {
         var text = $("#btn-label-right").text();
-        $("#btn-label-right").text(text == "aeg" ? "uuesti" : "aeg");
+
+        $('#btn-label-right').text(getText(text));
         var ix = $(this).index();
         $('#calc-right-a').stop(true).slideToggle(750, "linear", ix === 0);
         $('#calc-right-b').stop(true).slideToggle(750, "linear", ix === 1);
 
-        if(text == "aeg"){
+        if(text == "aeg"  || text == "time"){
             var input = document.getElementById('wakeup-insert').value;
 
             var timeHour = parseInt(input.split(/[.:;,-]/)[0]);
@@ -141,6 +142,20 @@ $(document).ready(function () {
         }
 
     });
+    function getText (text){
+        if(text == "aeg" || text == "time"){
+            if(text == "aeg")
+                text = "uuesti";
+            else
+                text = "again";
+        }else{
+            if(text == "uuesti")
+                text = "aeg";
+            else
+                text= "time";
+        }
+        return text;
+    }
 // teeme kõik arvud vähemalt 2 kohaliseks ehk 1 oleks 01 jne
     function pad(d) {
         return (d < 10) ? '0' + d.toString() : d.toString();

@@ -12,7 +12,6 @@
     <meta name="author" content="">
 
 
-
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,18 +27,18 @@
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script>
-	if (typeof jQuery == 'undefined') {
-		document.write(decodeURI("%3Cscript src='/js/jquery-2.2.2.min.js' type='text/javascript'%3E%3C/script%3E"));
-	}
-	</script>
+    <script>
+        if (typeof jQuery == 'undefined') {
+            document.write(decodeURI("%3Cscript src='/js/jquery-2.2.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
     <!-- Sujuv lehekülgede vahetus -->
     <script src="/js/animsition.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script>
-		$.fn.modal || document.write(decodeURI("%3Cscript src='/js/bootstrap.min.js' type='text/javascript'%3E%3C/script%3E"))
-		</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        $.fn.modal || document.write(decodeURI("%3Cscript src='/js/bootstrap.min.js' type='text/javascript'%3E%3C/script%3E"))
+    </script>
     <!-- Main script -->
     <script src="/js/main.js"></script>
 
@@ -61,22 +60,23 @@
 <div class="page animsition">
     <nav id="sidebar-wrapper">
 
-        <a id="menu-close" href="#" class="close-btn toggle">SULGE <span
+        <a id="menu-close" href="#" class="close-btn toggle">{{ trans('menu.close') }} <span
                     class="glyphicon glyphicon-remove-circle"></span></a>
         <ul class="sidebar-nav">
 
             @if (Auth::guest())
-                <li><a href="/" class="animsition-link">Pealeht</a></li>
-                <li><a href="/loe_lisaks" class="animsition-link">Loe lisaks</a></li>
-                <li><a href="/kaart" class="animsition-link"> Kaart </a></li>
+                <li><a href="/" class="animsition-link">{{ trans('menu.main') }}</a></li>
+                <li><a href="/loe_lisaks" class="animsition-link">{{ trans('menu.more') }}</a></li>
+                <li><a href="/kaart" class="animsition-link"> {{ trans('menu.map') }} </a></li>
             @else
-                <li><a href="/home" class="animsition-link">Kodu</a></li>
-                <li><a href="/" class="animsition-link">Pealeht</a></li>
-                <li><a href="/unelogi" class="animsition-link">Unelogi</a></li>
-                <li><a href="/statistika" class="animsition-link">Statistika</a></li>
-                <li><a href="/loe_lisaks" class="animsition-link">Loe lisaks</a></li>
-                <li><a href="/kaart" class="animsition-link"> Kaart </a></li>
-                <li><a href="{{ url('/logout') }}">Logi välja</a></li>
+                <li><a href="/home" class="animsition-link">{{ trans('menu.home') }}</a></li>
+                <li><a href="/" class="animsition-link">{{ trans('menu.main') }}</a></li>
+                <li><a href="/unelogi" class="animsition-link">{{ trans('menu.log') }}</a></li>
+                <li><a href="/statistika" class="animsition-link">{{ trans('menu.stats') }}</a></li>
+                <li><a href="/loe_lisaks" class="animsition-link">{{ trans('menu.more') }}</a></li>
+                <li><a href="/kaart" class="animsition-link"> {{ trans('menu.map') }} </a></li>
+
+                <li><a href="{{ url('/logout') }}">{{ trans('menu.logout') }}</a></li>
 
             @endif
         </ul>
@@ -93,8 +93,9 @@
                     <!--<div class="col-xs-2"><a id="login-toggle" href="#" class="toggle" title="Login" data-toggle="tooltip" data-placement="left"></a>Login</div>
                     -->
                     <div class="col-xs-6 col-sm-3 pull-right">
-                        <a id="menu-toggle" href="#" class="toggle" role="button"><img src="/img/menusvg.svg" alt="menu"></a>
 
+                        <a id="menu-toggle" href="#" class="toggle" role="button"><img src="/img/menusvg.svg"
+                                                                                       alt="menu"></a>
                         @if (Auth::guest())
                             <a id="login-toggle" href="login" data-remote="false" data-modal-id="modal-login"
                                title="Login" data-toggle="tooltip"
@@ -103,9 +104,22 @@
                             <span id="user-toggle"> {{ substr(Auth::user()-> first_name,0,1) . "." . substr(Auth::user()-> last_name,0,1) . "."  }} </span>
                         @endif
 
+
+
                     </div>
+
                 </div>
+
             </div>
+
+
+        </div>
+        <div class="language pull-right">
+            @if('et' == App::getLocale())
+                <a href="/language/en"><img src="/img/flag_en.png" alt="EN"></a>
+            @else
+                <a href="/language/et"><img src="/img/flag_et.png" alt="ET"></a>
+            @endif
         </div>
     </header>
 
@@ -114,9 +128,14 @@
 
     <!-- ****************************** Content ************************** -->
 
+    @if (Auth::guest())
+        @include('auth.loginModal')
+    @endif
+
     @yield('content')
 
-    <!-- Footer -->
+
+            <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">

@@ -47,38 +47,7 @@
                     </div>
                     <!-- /.panel-heading -->
                     <div class="log-panel-body">
-                        <div class="list-group">
-                            {{--                           <a href="#" class="list-group-item">Best dream ever
-                                                           <span class="log-list pull-right text-muted small"><em>18.03.16</em></span>
-                                                       </a>
-                                                       <a href="#" class="list-group-item">Worst dream ever
-                                                               <span class="log-list pull-right text-muted small"><em>18.03.16</em>
-                                                               </span>
-                                                       </a>
-                                                       <a href="#" class="list-group-item">Okay dream
-                                                               <span class="log-list pull-right text-muted small"><em>18.03.16</em>
-                                                               </span>
-                                                       </a>
-                                                       <a href="#" class="list-group-item">Maksuamet
-                                                               <span class="log-list pull-right text-muted small"><em>17.03.16</em>
-                                                               </span>
-                                                       </a>
-                                                       <a href="#" class="list-group-item">Pitsa
-                                                               <span class="log-list pull-right text-muted small"><em>16.03.16</em>
-                                                               </span>
-                                                       </a>
-                                                       <a href="#" class="list-group-item">9/11
-                                                               <span class="log-list pull-right text-muted small"><em>15.03.16</em>
-                                                               </span>
-                                                       </a>
-                                                       <a href="#" class="list-group-item">Melt
-                                                               <span class="log-list pull-right text-muted small"><em>10.03.16</em>
-                                                               </span>
-                                                       </a>
-                                                       <a href="#" class="list-group-item">Steel beams
-                                                               <span class="log-list pull-right text-muted small"><em>05.03.16</em>
-                                                               </span>
-                                                       </a>--}}
+                        <div class="list-group endless-pagination" data-next-page="{{ $logs->nextPageUrl() }}">
                             @foreach($logs as $log)
                                 <a href="/unelogi/{{$log->id}}" class="list-group-item"> {{$log -> title}}
                                     <span class="log-list pull-right text-muted small"><em>{{date('d.m.Y', strtotime($log    -> date))}}</em>
@@ -86,8 +55,11 @@
                                 </a>
                             @endforeach
                         </div>
-                        {{$logs->links()}}
-                        <script type="text/javascript">
+
+
+                        {{--{{$logs->links()}}--}}
+                        <button type="submit" class="btn btn-default btn-block">Vaata vanemaid</button>
+  {{--                      <script type="text/javascript">
                             $(function() {
                                 $('.scroll').jscroll({
                                     autoTrigger: true,
@@ -98,8 +70,7 @@
                                     }
                                 });
                             });
-                        </script>
-                        <button type="submit" class="btn btn-default btn-block">Vaata vanemaid</button>
+                        </script>--}}
                     </div>
                     <!-- /.panel-body -->
                 </div>
