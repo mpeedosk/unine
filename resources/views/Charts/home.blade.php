@@ -3,6 +3,7 @@
 {{--    var data = JSON.parse({{ $sleeps }});--}}
     var data = {!! json_encode($query2)!!}
 
+
     Morris.Bar({
         axes: true,
         grid: true,

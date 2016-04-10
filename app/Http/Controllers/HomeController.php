@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
 //        $sleeps = Auth::User()->sleep()->latest()->take(7)->get();
         $userId = Auth::id();
-        $query = "SELECT hours, type, DATE_FORMAT(created_at, '%d.%m') as created_at FROM sleep WHERE user_id =$userId ORDER BY id DESC LIMIT 7";
+        $query = "SELECT hours,DATE_FORMAT(created_at, '%d.%m') as created_at FROM sleep WHERE user_id =$userId ORDER BY id DESC LIMIT 7";
 
         $query2 = array_reverse(DB::select(DB::raw($query)));
 //        dd($query2);

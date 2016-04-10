@@ -15,8 +15,8 @@
 @section('content')
 
     <div id="content">
-        <div class="content-overlay" style="padding: 20px;">
-            <div class="container col-md-12" id="map-container" style="height: 100%;"></div>
+        <div class="content-overlay extra-padding">
+            <div class="container col-md-12" id="map-container"></div>
         </div>
     </div>
 

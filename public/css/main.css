@@ -837,3 +837,24 @@ textarea.form-control:focus {
         left: 20%;
     }
 }
+
+
+#map-container{
+    height: 100%;
+}
+
+/* loe lisaks lehekülg*/
+
+.postDate{
+    font-size: 0.7em;
+}
+
+.postPanel{
+    border: 1px solid #333;
+    margin: 4px 0 20px 0;
+    padding: 5px;
+}
+
+.extra-padding{
+    padding: 20px;
+}

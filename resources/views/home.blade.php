@@ -77,7 +77,7 @@
 
     <br>
 
-    <section id="content">
+    <div id="content">
 
         <div class="row">
 
@@ -116,7 +116,7 @@
                 </section>
             </div>
         </div>
-    </section>
+    </div>
 
     <script type="text/javascript">
         $('.clockpicker').clockpicker({

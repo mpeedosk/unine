@@ -1,21 +1,18 @@
-
 $(document).ready(function () {
 
     $('[data-toggle="tooltip"]').tooltip();
 
     // avab login akna
-/*
-    $("#login-toggle").on('click', function () {
-        $("#login-modal").modal({show: true});
-    });
+    /*
+     $("#login-toggle").on('click', function () {
+     $("#login-modal").modal({show: true});
+     });
 
-    // sulgeb login akna
-    $("#login-close").on('click', function () {
-        $("#login-modal").modal('hide')
-    }); // show login modal
-*/
-
-
+     // sulgeb login akna
+     $("#login-close").on('click', function () {
+     $("#login-modal").modal('hide')
+     }); // show login modal
+     */
 
 
     // veeretab menüü välja
@@ -72,7 +69,7 @@ $(document).ready(function () {
         $('#calc-left-b').stop(true).slideToggle(750, ix === 1);
 
 
-        if(text == "aeg" || text == "time"){
+        if (text == "aeg" || text == "time") {
             var currentdate = new Date();
             var timeHour = currentdate.getHours();
             var timeMinute = currentdate.getMinutes() + 14;
@@ -89,13 +86,25 @@ $(document).ready(function () {
                 timeHour = timeHour % 24;
                 var datetime = pad(timeHour) + ":" + pad(timeMinute);
 
-                switch(i){
-                    case 1: $("#time-text-left-1").text(datetime); break;
-                    case 2: $("#time-text-left-2").text(datetime); break;
-                    case 3: $("#time-text-left-3").text(datetime); break;
-                    case 4: $("#time-text-left-4").text(datetime); break;
-                    case 5: $("#time-text-left-5").text(datetime); break;
-                    case 6: $("#time-text-left-6").text(datetime); break;
+                switch (i) {
+                    case 1:
+                        $("#time-text-left-1").text(datetime);
+                        break;
+                    case 2:
+                        $("#time-text-left-2").text(datetime);
+                        break;
+                    case 3:
+                        $("#time-text-left-3").text(datetime);
+                        break;
+                    case 4:
+                        $("#time-text-left-4").text(datetime);
+                        break;
+                    case 5:
+                        $("#time-text-left-5").text(datetime);
+                        break;
+                    case 6:
+                        $("#time-text-left-6").text(datetime);
+                        break;
 
                 }
             }
@@ -112,7 +121,7 @@ $(document).ready(function () {
         $('#calc-right-a').stop(true).slideToggle(750, "linear", ix === 0);
         $('#calc-right-b').stop(true).slideToggle(750, "linear", ix === 1);
 
-        if(text == "aeg"  || text == "time"){
+        if (text == "aeg" || text == "time") {
             var input = document.getElementById('wakeup-insert').value;
 
             var timeHour = parseInt(input.split(/[.:;,-]/)[0]);
@@ -121,16 +130,28 @@ $(document).ready(function () {
             timeHour += 21; // liidame 24 et saaks paremini lahutdada, ning lahutame 3, mis on hilisem uneaeg
             $("#time-text-right").text("");
 
-            for (var i = 1; i < 8 ; i++) {
+            for (var i = 1; i < 8; i++) {
                 var datetime = pad(timeHour % 24) + ":" + pad(timeMinute);
 
-                switch(i){
-                    case 1: $("#time-text-right-6").text(datetime); break;
-                    case 2: $("#time-text-right-5").text(datetime); break;
-                    case 3: $("#time-text-right-4").text(datetime); break;
-                    case 4: $("#time-text-right-3").text(datetime); break;
-                    case 5: $("#time-text-right-2").text(datetime); break;
-                    case 6: $("#time-text-right-1").text(datetime); break;
+                switch (i) {
+                    case 1:
+                        $("#time-text-right-6").text(datetime);
+                        break;
+                    case 2:
+                        $("#time-text-right-5").text(datetime);
+                        break;
+                    case 3:
+                        $("#time-text-right-4").text(datetime);
+                        break;
+                    case 4:
+                        $("#time-text-right-3").text(datetime);
+                        break;
+                    case 5:
+                        $("#time-text-right-2").text(datetime);
+                        break;
+                    case 6:
+                        $("#time-text-right-1").text(datetime);
+                        break;
                 }
                 timeHour--;
                 timeMinute -= 30;
@@ -142,47 +163,46 @@ $(document).ready(function () {
         }
 
     });
-    function getText (text){
-        if(text == "aeg" || text == "time"){
-            if(text == "aeg")
+    function getText(text) {
+        if (text == "aeg" || text == "time") {
+            if (text == "aeg")
                 text = "uuesti";
             else
                 text = "again";
-        }else{
-            if(text == "uuesti")
+        } else {
+            if (text == "uuesti")
                 text = "aeg";
             else
-                text= "time";
+                text = "time";
         }
         return text;
     }
+
 // teeme kõik arvud vähemalt 2 kohaliseks ehk 1 oleks 01 jne
     function pad(d) {
         return (d < 10) ? '0' + d.toString() : d.toString();
     }
 
 
-
-
     /*
      Modals
      */
-    $('#login-toggle').on('click', function(e){
+    $('#login-toggle').on('click', function (e) {
         e.preventDefault();
-        $( '#' + $(this).data('modal-id') ).modal();
+        $('#' + $(this).data('modal-id')).modal();
     });
 
     /*
      Form validation
      */
-    $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
+    $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function () {
         $(this).removeClass('input-error');
     });
 
-    $('.login-form').on('submit', function(e) {
+    $('.login-form').on('submit', function (e) {
 
-        $(this).find('input[type="text"], input[type="password"], textarea').each(function(){
-            if( $(this).val() == "" ) {
+        $(this).find('input[type="text"], input[type="password"], textarea').each(function () {
+            if ($(this).val() == "") {
                 e.preventDefault();
                 $(this).addClass('input-error');
             }
@@ -193,8 +213,30 @@ $(document).ready(function () {
 
     });
 
+
+    // update posts with ajax
+    $('#posts').on('submit', function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: $(this).parent().attr('action'),
+            type: "post",
+            data: {
+                '_token': $('input[name="_token"]').val(),
+                'body': $('#newPost').val()
+            },
+            success: function (data) {
+                $('.postWrapper').html(data.posts);
+                $('#newPost').val("");
+            }
+        })
+    });
+
+
+
 });
 
+// day n night theme
 function getStylesheet() {
     var currentTime = new Date().getHours();
     if (currentTime > 17 || currentTime < 6) {
@@ -204,8 +246,9 @@ function getStylesheet() {
     document.write("<link rel='stylesheet' href='/css/animsition.min.css' type='text/css'>");
 }
 
+// google map implementation
 function init_map() {
-    var school = new google.maps.LatLng(58.378254,  26.714684);
+    var school = new google.maps.LatLng(58.378254, 26.714684);
 
     var options = {
         center: school,
@@ -220,7 +263,7 @@ function init_map() {
         position: school,
         map: map,
         animation: google.maps.Animation.DROP,
-        title:"J. Liivi 2"
+        title: "J. Liivi 2"
     });
 
     marker.addListener('click', toggleBounce);
@@ -233,8 +276,46 @@ function init_map() {
         }
     }
 
-
-
     marker.setMap(map);
+
+}
+
+// infinite scroll ajax
+function fetchPosts() {
+
+    var page = $('.endless-pagination').data('next-page');
+    if (page !== null) {
+
+        clearTimeout($.data(this, "scrollCheck"));
+
+        $.data(this, "scrollCheck", setTimeout(function () {
+            var scroll_position_for_posts_load = $('.log-panel-body').height() + $('.log-panel-body').scrollTop() + 70;
+            if (scroll_position_for_posts_load >= $('.list-group').height()) {
+                $.get(page, function (data) {
+                    $('.endless-pagination').append(data.posts);
+                    $('.endless-pagination').data('next-page', data.next_page);
+                });
+            }
+        }, 350))
+
+    }
+}
+
+// data push
+function poll(){
+    $.ajax({
+        url: $(this).parent().attr('action'),
+        type: "get",
+        data: {
+            '_token': $('input[name="_token"]').val(),
+            'body': $('#newPost').val()
+        },
+        success: function (data) {
+            $('.postWrapper').html(data.posts);
+        }
+    });
+    setTimeout(function(){
+        poll();
+    }, 10000);
 
 }

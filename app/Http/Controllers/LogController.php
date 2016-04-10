@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Log;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
-use Carbon\Carbon;
 
 class LogController extends Controller
 {
@@ -16,32 +15,49 @@ class LogController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+        // kui kasutaja proovib teise kasutaja logisid lugeda
         $this->middleware("logowner", ['only' => 'edit']);
     }
 
-    public function logs(){
+    // ei mäleta miks selle üldse tegin
+/*    public function logs(){
         $logs = Auth::User()->logs()->latest()->simplePaginate(7);
 
         return $logs;
-    }
+    }*/
 
-    public function index(){
+    public function index(Request $request){
 
         $allLogs = Auth::User()->logs();
-        $logs = $allLogs->latest()->simplePaginate(7);
-//        $users = DB::table('users')->select(DB::raw('count(*) as user_count, first_name'))->groupBy('first_name')->get();
+        $logs = $allLogs->latest()->simplePaginate(9);
+
+        if($request->ajax()) {
+            return [
+                'posts' => view('unelogi.ajax.log')->with(compact('logs'))->render(),
+                'next_page' => $logs->nextPageUrl()
+            ];
+        }
+
         $logCount = $allLogs->count();
 
         return view('unelogi',compact('logs', 'logCount'));
     }
 
-    public function edit(Log $log){
-        $logs = Auth::User()->logs()->latest()->simplePaginate(7);
+    // tuleks kunagi ajaxi peale teha kõik
+    public function edit(Request $request, Log $log){
+        $logs = Auth::User()->logs()->latest()->simplePaginate(9);
+
         // valime praeguse logiga seotud ärkamisaja
         $times = DB::table('sleep')->join('logs', 'sleep.id', '=', 'logs.sleep_id')->select('sleep.went_to_sleep', 'sleep.woke_up')->where('logs.id', '=', $log->id)->get();
-//        dd($times);
 
-        // kui kasutaja proovib teise kasutaja logisid lugeda
+        if($request->ajax()) {
+            return [
+                'posts' => view('unelogi.ajax.log')->with(compact('logs'))->render(),
+                'next_page' => $logs->nextPageUrl()
+            ];
+        }
+
 
         return view('unelogi.show', compact('times','log','logs'));
     }
@@ -74,15 +90,6 @@ class LogController extends Controller
             'date' => 'date_format:"d.m.Y"'
         ]);
 
-
-       /* $title = $request-> title;
-        $body = $request -> body;
-        $date = date("Y-m-d", strtotime($request -> date));
-        $user_id = Auth::id();
-        $datetime = Carbon::now();
-        $current_time = $datetime -> toDateTimeString();
-
-        DB::insert('INSERT INTO `logs` (title, body, date, user_id, created_at, updated_at) values (?,?,?,?,?,?)',[$title, $body, $date, $user_id ,$current_time, $current_time]);*/
 
         $log = new Log;
 

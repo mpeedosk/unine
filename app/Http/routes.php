@@ -58,9 +58,9 @@ Route::group(['middleware' => 'web'], function () {
         return view('map');
     });
 
-    Route::get('/loe_lisaks', function () {
-        return view('loelisaks');
-    });
+    Route::get('/loe_lisaks', 'PostController@index');
+    Route::post('/loe_lisaks', 'PostController@store');
+
     Route::get('/login', function () {
         return view('auth.login');
     });
