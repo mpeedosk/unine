@@ -36,10 +36,6 @@
 
 
     <script>
-        getStylesheet();
-    </script>
-
-    <script>
         function goBack() {
             window.history.back();
         }

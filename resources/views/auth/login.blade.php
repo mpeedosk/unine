@@ -31,9 +31,6 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/morning.css" rel="stylesheet">
 
-    <script>
-        getStylesheet();
-    </script>
 
     <script>
         function goBack() {
