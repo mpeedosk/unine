@@ -1,6 +1,6 @@
 body{
 	color: #FFF;
-	background: linear-gradient(rgba(187, 200, 229, 0.9), rgba(187,200,229, 0.9)), url(../img/feathers.png);
+	background: linear-gradient(rgba(187, 200, 229, 0.9), rgba(187,200,229, 0.9));
 }
 
 
@@ -96,6 +96,13 @@ hr.medium {
 	color: #FFFFFF;
 }
 
+#home-dates{
+	background-color: #405162;
+}
+.bar-panel-body{
+	background-color: #2e3a45;
+}
+
 /* --------- login modal --------- */
 input[type="email"],
 input[type="text"],
@@ -182,5 +189,11 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 
 .register:hover {
 	color: #399599;
+}
+
+/* DATE PICKER*/
+
+.datepicker{
+	background: #28333c;
 }
 

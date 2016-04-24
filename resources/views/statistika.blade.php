@@ -1,26 +1,19 @@
 @extends('layout')
-
 @section('page-title')
     <title>Statistika</title>
     @stop
 
     @section('page-specific-stuff')
-            <!-- Morris Charts CSS -->
-    <link href="libs/morris.js/morris.css" rel="stylesheet">
 
     <!-- Datepicker -->
     <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
 
     <!-- Morris Charts JavaScript -->
-    <script src="libs/raphael/raphael-min.js"></script>
-    <script src="libs/morris.js/morris.min.js"></script>
-    <script src="js/currentWeek.js"></script>
-    <script src="js/currentYear.js"></script>
 
-    <script src="js/datepicker.min.js"></script>
+    <script src="js/datepicker.min.js" defer></script>
 
     <!-- Include English language -->
-    <script src="js/i18n/datepicker.et.js"></script>
+    <script src="js/i18n/datepicker.et.js" defer></script>
 @stop
 
 @section('content')
@@ -125,11 +118,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        for (i = new Date().getFullYear(); i > 2005; i--) {
-            $('#yearpicker').append($('<option />').val(i).html(i));
-        }
-    </script>
 
 @stop

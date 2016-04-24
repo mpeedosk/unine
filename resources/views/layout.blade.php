@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="et">
+@yield('html')
 
 <head>
     @yield('page-title')
@@ -11,53 +11,27 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="/css/main.css" rel="stylesheet">
-    <link href="/css/morning.css" rel="stylesheet">
-
-
-    <!-- teine kujundus, kui javascript ei tööta -->
-    <noscript>
-        <link href="/css/main-noscript.css" rel="stylesheet">
-    </noscript>
-
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script>
-        if (typeof jQuery == 'undefined') {
-            document.write(decodeURI("%3Cscript src='/js/jquery-2.2.2.min.js' type='text/javascript'%3E%3C/script%3E"));
-        }
-    </script>
-    <!-- Sujuv lehekülgede vahetus -->
-    <script src="/js/animsition.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" defer></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script>
-        $.fn.modal || document.write(decodeURI("%3Cscript src='/js/bootstrap.min.js' type='text/javascript'%3E%3C/script%3E"))
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
     <!-- Main script -->
-    <script src="/js/main.js"></script>
-
-    <!--valime värviteema vahel-->
-    <script>
-        getStylesheet();
-    </script>
+    <script src="/js/main.js" defer></script>
 
     @yield('page-specific-stuff')
 
             <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
           rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>
 <!-- ****************************** Sidebar ************************** -->
-<div class="page animsition">
+<div class="page">
     <nav id="sidebar-wrapper">
 
         <a id="menu-close" href="#" class="close-btn toggle">{{ trans('menu.close') }} <span
@@ -65,18 +39,16 @@
         <ul class="sidebar-nav">
 
             @if (Auth::guest())
-                <li><a href="/" class="animsition-link">{{ trans('menu.main') }}</a></li>
-                <li><a href="/loe_lisaks" class="animsition-link">{{ trans('menu.more') }}</a></li>
-                <li><a href="/kaart" class="animsition-link"> {{ trans('menu.map') }} </a></li>
+                <li><a href="/" class="animsition-link"><span class="glyphicon glyphicon-time"></span>{{ trans('menu.main') }}</a></li>
+                <li><a href="/loe_lisaks" class="animsition-link"><span class="glyphicon glyphicon-info-sign"></span>{{ trans('menu.more') }}</a></li>
             @else
-                <li><a href="/home" class="animsition-link">{{ trans('menu.home') }}</a></li>
-                <li><a href="/" class="animsition-link">{{ trans('menu.main') }}</a></li>
-                <li><a href="/unelogi" class="animsition-link">{{ trans('menu.log') }}</a></li>
-                <li><a href="/statistika" class="animsition-link">{{ trans('menu.stats') }}</a></li>
-                <li><a href="/loe_lisaks" class="animsition-link">{{ trans('menu.more') }}</a></li>
-                <li><a href="/kaart" class="animsition-link"> {{ trans('menu.map') }} </a></li>
+                <li><a href="/home" class="animsition-link"><span class="glyphicon glyphicon-calendar"></span>{{ trans('menu.home') }}</a></li>
+                <li><a href="/" class="animsition-link"><span class="glyphicon glyphicon-time"></span>{{ trans('menu.main') }}</a></li>
+                <li><a href="/unelogi" class="animsition-link"><span class="glyphicon glyphicon-comment"></span>{{ trans('menu.log') }}</a></li>
+                <li><a href="/statistika" class="animsition-link"><span class="glyphicon glyphicon-stats"></span> {{ trans('menu.stats') }}</a></li>
+                <li><a href="/loe_lisaks" class="animsition-link"><span class="glyphicon glyphicon-info-sign"></span>{{ trans('menu.more') }}</a></li>
 
-                <li><a href="{{ url('/logout') }}">{{ trans('menu.logout') }}</a></li>
+                <li><a href="{{ url('/logout') }}">  <span class="glyphicon glyphicon-log-out"></span> {{ trans('menu.logout') }}</a></li>
 
             @endif
         </ul>
@@ -145,6 +117,7 @@
                 </div>
             </div>
         </div>
+
     </footer>
 
 </div>

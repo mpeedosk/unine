@@ -40,7 +40,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('unelogi', 'LogController@index');
     Route::get('unelogi/{log}', 'LogController@edit');
-    Route::post('unelogi/store', 'LogController@store');
+    Route::get('unelogi/a/{log}', 'LogController@fetch');
+    Route::post('unelogi', 'LogController@create');
     Route::patch('unelogi/{log}', 'LogController@update');
 
     Route::post('checkUser', 'Auth\AuthController@checkAvailableUser');
@@ -53,6 +54,10 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/unearvutaja', function () {
         return view('index');
+    });
+
+    Route::get('/offline', function () {
+        return view('errors.noConnection');
     });
     Route::get('/kaart', function(){
         return view('map');

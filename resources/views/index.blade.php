@@ -1,15 +1,23 @@
 @extends('layout')
 
+@section('html')
+    @if (Auth::guest())
+        <html lang="et">
+    @else
+        <html lang="et" manifest="uni.appcache">
+    @endif
+@stop
+
 @section('page-title')
     <title>Uni</title>
     @stop
     @section('page-specific-stuff')
 
             <!-- Datepicker -->
-    <link href="css/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css">
 
     <!-- Kella valik -->
-    <script src="js/bootstrap-clockpicker.js"></script>
+    <script src="/js/bootstrap-clockpicker.js" defer></script>
 
     @if (count($errors) > 0)
         <script type="text/javascript">
@@ -149,7 +157,7 @@
             <div class="login-panel">
                 <div class="panel-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">{{ trans('main.help') }}</h3>
+                    <h2 class="modal-title">{{ trans('main.help') }}</h2>
                 </div>
                 <div class="panel-body">
                     <p>{{ trans('main.rHelp') }}</p>
@@ -164,7 +172,7 @@
             <div class="login-panel">
                 <div class="panel-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">{{ trans('main.help') }}</h3>
+                    <h2 class="modal-title">{{ trans('main.help') }}</h2>
                 </div>
                 <div class="panel-body">
                     <p>{{ trans('main.lHelp') }}</p>

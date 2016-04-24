@@ -39,9 +39,11 @@ class LogController extends Controller
             ];
         }
 
+        $first = $logs[0];
+//        dd($first);
         $logCount = $allLogs->count();
 
-        return view('unelogi',compact('logs', 'logCount'));
+        return view('unelogi',compact('logs', 'first', 'logCount'));
     }
 
     // tuleks kunagi ajaxi peale teha kõik
@@ -62,8 +64,19 @@ class LogController extends Controller
         return view('unelogi.show', compact('times','log','logs'));
     }
 
+    public function fetch(Request $request, Log $log){
+
+        return [
+            'title' => $log->title,
+            'body' => $log->body,
+            'date' => $log->date
+        ];
+    }
+
+
     // uuendame logi väljad ning suuname kasutaja tagasi
     protected function update(Request $request, Log $log){
+
 
         $this->validate($request, [
             'body' => 'required',
@@ -71,16 +84,24 @@ class LogController extends Controller
             'date' => 'required|date_format:"d.m.Y"'
         ]);
 
-        $log -> body = $request -> body;
-        $log -> title = $request -> title;
-        $log -> date = date("Y-m-d", strtotime($request -> date));
+        $this->setLogData($request, $log);
 
         $log->save();
 
+        if($request->ajax()) {
+            $allLogs = Auth::User()->logs();
+            $logs = $allLogs->latest()->simplePaginate(9);
+            return [
+                'posts' => view('unelogi.ajax.log')->with(compact('logs'))->render(),
+                'next_page' => $logs->nextPageUrl()
+            ];
+        }
         return back();
 
 
     }
+
+/* // teisele implementatsioonile läskin üle
 
     protected function store(Request $request){
 
@@ -93,12 +114,48 @@ class LogController extends Controller
 
         $log = new Log;
 
-        $log -> body = $request -> body;
-        $log -> title = $request -> title;
-        $log -> date = date("Y-m-d", strtotime($request -> date));
+        $this->setLogData($request, $log);
 
         Auth::User()->logs()->save($log);
 
         return back();
+    }*/
+
+    protected function create(Request $request){
+
+
+        $log = new Log;
+
+        $log->body = "Sisestage text";
+        $log->title = "Uus sissekanne";
+        $log->date = date("Y-m-d");
+
+        Auth::User()->logs()->save($log);
+
+        if($request->ajax()) {
+            $allLogs = Auth::User()->logs();
+            $logs = $allLogs->latest()->simplePaginate(9);
+            return [
+                'posts' => view('unelogi.ajax.log')->with(compact('logs'))->render(),
+                'next_page' => $logs->nextPageUrl(),
+                'id' => $log->id,
+                'body' => $log->body,
+                'title' => $log->title,
+                'date' => $log -> date
+            ];
+        }
+
+        return back();
+    }
+
+    /**
+     * @param Request $request
+     * @param $log
+     */
+    private function setLogData(Request $request, $log)
+    {
+        $log->body = $request->body;
+        $log->title = $request->title;
+        $log->date = date("Y-m-d", strtotime($request->date));
     }
 }

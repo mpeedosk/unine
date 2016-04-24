@@ -1,0 +1,45 @@
+CACHE MANIFEST
+# version 0.2
+
+#css
+/css/bootstrap.min.css
+/css/main.css
+/css/morning.css
+/css/animsition.min.css
+/css/bootstrap-clockpicker.min.css
+/css/datepicker.min.css
+
+# javascript
+/js/main.js
+/js/jquery-2.2.2.min.js
+/js/animsition.min.js
+/js/bootstrap.min.js
+/js/bootstrap-clockpicker.js
+/js/datepicker.min.js
+
+#images
+/img/pillow.ico
+/img/pillow.svg
+/img/flag_en.png
+/img/flag_et.png
+/img/morning.svg
+/img/menusvg.svg
+/img/ajax-loader.gif	
+/img/ajax-loader-log.gif	
+/img/gp.svg
+/img/Fb.svg
+
+#fonts
+/fonts/glyphicons-halflings-regular.eot
+/fonts/glyphicons-halflings-regular.svg
+/fonts/glyphicons-halflings-regular.ttf
+/fonts/glyphicons-halflings-regular.woff
+/fonts/glyphicons-halflings-regular.woff2
+
+NETWORK:
+*
+
+FALLBACK:
+/ /offline
+
+
